@@ -1,0 +1,309 @@
+# Git & GitHub Complete Notes
+
+## What Is Git?
+Git is a version control system used to:
+- track code changes
+- save project history
+- collaborate with others
+- manage projects professionally
+
+---
+
+# What Is GitHub?
+GitHub is a cloud platform where Git repositories are stored online.
+
+Used for:
+- portfolio projects
+- collaboration
+- backups
+- open-source projects
+
+---
+
+# Install Git
+
+## Download
+https://git-scm.com/download/win
+
+## Verify Installation
+
+```bash
+git --version
+```
+
+Expected:
+
+```plaintext
+git version 2.xx.x.windows.x
+```
+
+---
+
+# Configure Git
+
+## Set Username
+
+```bash
+git config --global user.name "Ahmad"
+```
+
+## Set Email
+
+```bash
+git config --global user.email "your-email@gmail.com"
+```
+
+## Verify Config
+
+```bash
+git config --list
+```
+
+---
+
+# Generate SSH Key
+
+## Create SSH Key
+
+```bash
+ssh-keygen -t ed25519 -C "your-email@gmail.com"
+```
+
+Press Enter for default location.
+
+---
+
+# Start SSH Agent
+
+## PowerShell
+
+```powershell
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+```
+
+---
+
+# Add SSH Key
+
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+
+---
+
+# Show Public Key
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+Copy the FULL output.
+
+Starts with:
+
+```plaintext
+ssh-ed25519
+```
+
+---
+
+# Add SSH Key To GitHub
+
+## Open
+https://github.com/settings/keys
+
+## Steps
+- Click "New SSH key"
+- Add title
+- Paste public key
+- Click "Add SSH key"
+
+---
+
+# Test SSH Connection
+
+```bash
+ssh -T git@github.com
+```
+
+Expected:
+
+```plaintext
+Hi username! You've successfully authenticated
+```
+
+---
+
+# Clone Repository
+
+## SSH Clone
+
+```bash
+git clone git@github.com:USERNAME/REPOSITORY.git
+```
+
+---
+
+# Open Repository In VS Code
+
+```bash
+cd data-engineering-journey
+code .
+```
+
+---
+
+# Create Main Project Folders
+
+```powershell
+mkdir Notes, Python, SQL, ETL, PySpark, Azure, Databricks, AI-Analytics, Projects, Resources, GitHub-Practice
+```
+
+---
+
+# Create First Python File
+
+## Go Into Python Folder
+
+```powershell
+cd Python
+```
+
+## Create File
+
+```powershell
+New-Item hello.py
+```
+
+## Open File
+
+```powershell
+code hello.py
+```
+
+---
+
+# First Python Code
+
+```python
+print("Hello Ahmad!")
+```
+
+---
+
+# Run Python File
+
+```bash
+python hello.py
+```
+
+Expected:
+
+```plaintext
+Hello Ahmad!
+```
+
+---
+
+# Git Workflow
+
+## Check Status
+
+```bash
+git status
+```
+
+## Add Changes
+
+```bash
+git add .
+```
+
+## Commit Changes
+
+```bash
+git commit -m "Added first Python file"
+```
+
+## Push Changes
+
+```bash
+git push
+```
+
+---
+
+# Check Commit History
+
+```bash
+git log --oneline
+```
+
+---
+
+# Important Git Commands
+
+## Clone Repository
+
+```bash
+git clone URL
+```
+
+## Check Status
+
+```bash
+git status
+```
+
+## Add Files
+
+```bash
+git add .
+```
+
+## Commit Changes
+
+```bash
+git commit -m "message"
+```
+
+## Push Changes
+
+```bash
+git push
+```
+
+## Pull Changes
+
+```bash
+git pull
+```
+
+## View Branch
+
+```bash
+git branch
+```
+
+---
+
+# Professional Workflow
+
+1. Create/update files
+2. Save changes
+3. git status
+4. git add .
+5. git commit -m "message"
+6. git push
+
+---
+
+# Notes
+
+- GitHub does not show empty folders
+- Use `.gitkeep` for empty folders
+- Never share private SSH keys
+- Only share public keys
+- Commit changes regularly
+- Push projects to GitHub often
