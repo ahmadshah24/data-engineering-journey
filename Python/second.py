@@ -475,16 +475,22 @@ name = "sayed ahmad shah sekandary"
 # it happens when a function call it slefs to solve a problem
 
 
-def fib(n):
-    if (n==0 or n==1):
-        return n
-    return fib(n-2)+fib(n-1)
+# def fib(n):
+#     if (n==0 or n==1):
+#         return n
+#     return fib(n-2)+fib(n-1)
 
 
-print(fib(9))
+# print(fib(9))
 
 
+# def factorail (n):
+#     if n==1:
+#         return 1
+    
+#     return n*factorail(n-1)
 
+# print(factorail(4))
 
 
 
