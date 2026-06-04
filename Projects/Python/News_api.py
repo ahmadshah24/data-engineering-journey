@@ -5,9 +5,9 @@ import requests
 # query = "computer"
 query = input("Enter a topic to search for news: ")
 
-api = "f673deb1dcc24bbcb04781ef9be585ff"
+api_key = "f673deb1dcc24bbcb04781ef9be585ff"
 
-url = f"https://newsapi.org/v2/everything?q={query}&from=2026-05-03&sortBy=publishedAt&apiKey={api}"
+url = f"https://newsapi.org/v2/everything?q={query}&from=2026-05-03&sortBy=publishedAt&apiKey={api_key}"
 
 
 content = requests.get(url).json()
